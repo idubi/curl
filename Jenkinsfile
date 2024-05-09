@@ -13,12 +13,21 @@ pipeline {
                     // Check if the virtual environment exists, if not create it
                     if (!fileExists("venv")) {
                         sh 'python -m venv venv'
+                        sh 'source ./venv/bin/activate'
                     }
-                    // Install dependencies
-                    sh 'echo  "kuku"'
                 }
             } 
         }
+        stage('get curl docker builder') {
+            steps {
+                script {
+                    
+                   sh  'docker run -d --name curl-execution --privileged -v ./curl:/app  -v ./logs:/logs -v ./artifacts:/artifacts curl-ubuntu-operator'
+                   
+                }
+            } 
+        }
+
         // stage('Manage Docker Container - prior condition posgres db need to be up') {
         //     steps {
         //         script {
