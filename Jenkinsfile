@@ -21,12 +21,28 @@ pipeline {
         stage('get curl docker builder') {
             steps {
                 script {
-                    
-                   sh  'docker run -d --name curl-execution --privileged -v ./curl:/app  -v ./logs:/logs -v ./artifacts:/artifacts idubi/curl-ubuntu-operator:latest'
-                   
+                   sh  'docker run -d --name curl-execution --privileged -v /var/jenkins-agent/workspace/curl-clone:/app  -v /logs:/logs -v /artifacts:/artifacts idubi/curl-ubuntu-operator:latest'
                 }
             } 
         }
+
+        // stage('wait untll build ends') {
+        //     steps {
+        //         // script {
+        //         //    while container_is_up('curl-execution') {
+        //         //         sleep(10)
+        //         //     }
+        //         // }
+        //     } 
+        // }
+        // stage('stop curl container and delete it') {
+        //     steps {
+        //         script {
+        //            sh  'docker stop curl-execution'
+        //            sh  'docker rm curl-execution'
+        //         }
+        //     } 
+        // }
 
         // stage('Manage Docker Container - prior condition posgres db need to be up') {
         //     steps {
