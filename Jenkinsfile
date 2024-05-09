@@ -3,17 +3,17 @@ properties([  parameters([ string(defaultValue: 'idubi', description: 'domain na
                         ])
 ])
 pipeline {
-    agent any
+    agent jenkins-agent
 
     stages {
         stage('Setup Python Environment') {
             steps {
                 script {
-                    // // Check if the virtual environment exists, if not create it
-                    // if (!fileExists("venv")) {
-                    //     sh 'python -m venv venv'
-                    // }
-                    // Install dependencies
+                    // Check if the virtual environment exists, if not create it
+                    if (!fileExists("venv")) {
+                        sh 'python -m venv venv'
+                    }
+                    Install dependencies
                     sh 'echo  "kuku"'
                 }
             } 
