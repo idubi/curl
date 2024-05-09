@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     
-                   sh  'docker run -d --name curl-execution --privileged -v ./curl:/app  -v ./logs:/logs -v ./artifacts:/artifacts curl-ubuntu-operator'
+                   sh  'docker run -d --name curl-execution --privileged -v ./curl:/app  -v ./logs:/logs -v ./artifacts:/artifacts idubi/curl-ubuntu-operator:latest'
                    
                 }
             } 
