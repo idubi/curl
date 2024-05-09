@@ -4,7 +4,7 @@ properties([  parameters([ string(defaultValue: 'idubi', description: 'domain na
 ])
 pipeline {
     agent {
-        name 'jenkins-agent'
+        label 'jenkins-agent'
     }
     stages {
         stage('Setup Python Environment') {
