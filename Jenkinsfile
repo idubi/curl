@@ -21,7 +21,7 @@ pipeline {
         stage('get curl docker builder') {
             steps {
                 script {
-                   sh  'docker run -d --name curl-execution --privileged -v /var/jenkins-agent/workspace/curl-clone:/app  -v /logs:/logs -v /artifacts:/artifacts idubi/curl-ubuntu-operator:latest'
+                   sh  'docker run -d --name curl-execution --privileged -v /var/jenkins-agent/workspace/curl-clone:/app  -v /logs:/logs -v /artifacts:/artifacts idubi/curl-alpine-operator:latest'
                 }
             } 
         }
