@@ -1,5 +1,5 @@
 properties([  parameters([ string(defaultValue: 'idubi', description: 'domain name', name: 'DOMAIN', trim: true),
-                          string(defaultValue: 'flask-crud', description: 'repository name', name: 'REPONAME', trim: true)
+                          string(defaultValue: 'curl', description: 'repository name', name: 'REPONAME', trim: true)
                         ])
 ])
 pipeline {
@@ -36,7 +36,7 @@ pipeline {
                 }
             }
         }
-        stage('build Flask Application') 
+        stage('build curl Application') 
         {
             steps {
                 script {
