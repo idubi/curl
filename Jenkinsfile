@@ -5,7 +5,7 @@ properties([  parameters([ string(defaultValue: 'idubi', description: 'domain na
 pipeline {
     agent any
 
-    // stages {
+    stages {
     //     stage('Setup Python Environment') {
     //         steps {
     //             script {
