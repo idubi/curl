@@ -1,7 +1,7 @@
-properties([  parameters([ string(defaultValue: 'idubi', description: 'domain name', name: 'DOMAIN', trim: true),
-                          string(defaultValue: 'curl', description: 'repository name', name: 'REPONAME', trim: true)
-                        ])
-])
+// // properties([  parameters([ string(defaultValue: 'idubi', description: 'domain name', name: 'DOMAIN', trim: true),
+// //                           string(defaultValue: 'curl', description: 'repository name', name: 'REPONAME', trim: true)
+// //                         ])
+// ])
 pipeline {
     agent {
         label 'jenkins-agent'
