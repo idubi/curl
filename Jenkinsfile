@@ -13,7 +13,7 @@ pipeline {
                     if (!fileExists("venv")) {
                         sh 'python -m venv venv'
                     }
-                    Install dependencies
+                    // Install dependencies
                     sh 'echo  "kuku"'
                 }
             } 
